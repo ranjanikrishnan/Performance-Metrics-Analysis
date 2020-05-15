@@ -7,6 +7,9 @@ verify_ssl = true
 
 [packages]
 django = "*"
+djangorestframework = "*"
+django-filter = "*"
+djangorestframework-queryfields = "*"
 
 [requires]
 python_version = "3.7"
