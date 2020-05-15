@@ -1,7 +1,8 @@
 from django.urls import path
 from . import views
+from .views import *
 
 urlpatterns = [
     path('', views.performance, name='performance'),
-    path('data',views.load_data, name='data')
+    path('metrics',MetricListView.as_view(), name='query')
 ]
