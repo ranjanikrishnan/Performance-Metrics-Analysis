@@ -44,8 +44,15 @@
  
     - GET /marketing/metrics?fields=country,channel,cpi&cpi_sum&country=CA
 
+### Tests
+- Run the following to run tests
+
+```
+python manage.py test
+```
+
 ### TO DO
 
 - Follwing are yet to be worked on
-    - show sum of spend broken down by channel ordered by cpi in descending order 
-    - Tests
+    - Use case : show sum of spend broken down by channel ordered by cpi in descending order 
+    - More detailed tests
