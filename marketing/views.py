@@ -12,17 +12,17 @@ from django.http import JsonResponse
 from .models import Metric
 
 
-def performance(request):
+def get_hello(request):
     return HttpResponse("Hello, there")
 
 
 def calculate_cpi(queryset, fields):
     field_set = list(set(fields) - set(['cpi']))
-    print('field_set: ', field_set)
     qs_values = queryset.annotate(computed_cpi=ExpressionWrapper((F('spend') / F('installs')), output_field=FloatField())).values(*field_set).annotate(cpi=Sum('computed_cpi'))
     return qs_values
 
-def sum_value(queryset, fields, sum_values):
+
+def get_sum_value(queryset, fields, sum_values):
     field_set = list(set(fields) - set(sum_values)) 
     qs_values = queryset.values(*field_set)
     for val in sum_values:
@@ -59,6 +59,6 @@ class MetricListView(generics.ListAPIView):
         if 'sum' in query_param:
             fields = query_param['fields'].split(',')
             sum_values = query_param['sum'].split(',')
-            aggr_sum = sum_value(self.queryset, fields, sum_values)
+            aggr_sum = get_sum_value(self.queryset, fields, sum_values)
             return aggr_sum
         return self.queryset
