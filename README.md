@@ -1,4 +1,4 @@
-# Performance Metrics Analysis - Adjust Task
+# Performance Metrics Analysis
 
 ## Project Description
 - Exposess the sample dataset through a single generic HTTP API endpoint which is capable of filtering, grouping and sorting. Dataset represents performance metrics (impressions, clicks, installs, spend, revenue) for a given date, advertising channel, country and operating system. 
@@ -50,9 +50,3 @@
 ```
 python manage.py test
 ```
-
-### TO DO
-
-- Follwing are yet to be worked on
-    - Use case : show sum of spend broken down by channel ordered by cpi in descending order 
-    - More detailed tests
