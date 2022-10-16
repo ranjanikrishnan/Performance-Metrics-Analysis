@@ -18,7 +18,7 @@
 
 - Clone the repo
     ```
-    git clone https://github.com/ranjanikrishnan/Adjust-Home-Task
+    git clone https://github.com/ranjanikrishnan/Performance-Metrics-Analysis
     ```
 - Install the dependencies
     ```
